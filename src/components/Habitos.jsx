@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import sonidoFelicidades from '/src/assets/tada-fanfare-a-6313.mp3';
+import sonidoFelicidades from '../assets/tada-fanfare-a-6313.mp3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Habitos = ({
@@ -121,11 +121,13 @@ const Habitos = ({
                 <i className="bi bi-pencil-fill"></i>
               </button>
               <button
+                data-testid={`eliminar-${h.id}`}
                 className="btn btn-sm btn-danger me-2"
                 onClick={() => eliminarHabito(h.id)}
               >
                 <i className="bi bi-trash-fill"></i>
               </button>
+
               <button
                 className="btn btn-sm btn-success"
                 onClick={() => completarHabito(h.id)}
